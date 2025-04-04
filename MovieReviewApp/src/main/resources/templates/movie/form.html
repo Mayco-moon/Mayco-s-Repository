@@ -48,7 +48,7 @@
 					</td>
 				</tr>
 				<tr>
-					<th>オススメ度：星評価 (1〜5)</th>
+					<th>オススメ度<small> (1〜5)</small></th>
 					<td>
 						<input type="number" th:field="*{rating}">
 						<span th:if="${#fields.hasErrors('releaseYear')}"
@@ -58,17 +58,17 @@
 				<tr>
 					<th>あらすじ</th>
 					<td>
-						<input type="text" th:field="*{summary}">
-						<span th:if="${#fields.hasErrors('summary')}"
+						<textarea th:field="*{summary}" rows="5" style="width:100%;"></textarea>
+						<span th:if="${#fields.hasErrors('summary')}" 
 						th:errors="*{summary}" style="color:#700">エラーがあれば表示</span>
 					</td>
 				</tr>
 				<tr>
 					<th>感想</th>
 					<td>
-						<input type="text" th:field="*{review}">
-						<span th:if="${#fields.hasErrors('review')}"
-						th:errors="*{review}" style="color:#700">エラーがあれば表示</span>
+						<textarea th:field="*{review}" rows="5" style="width:100%;"></textarea>
+					    <span th:if="${#fields.hasErrors('review')}" 
+					              th:errors="*{review}" style="color:#700">エラーがあれば表示</span>
 					</td>
 				</tr>
 				<tr>
@@ -81,11 +81,15 @@
 				</tr>
 				
 		  </table>
-		  <!--3 ボタン：登録 or 編集--> 
-		  <input th:if="${movieForm.isNew}" type="submit" value="登録">
-		  <input th:unless="${movieForm.isNew}" type="submit" value="更新">
+		  <div class="submit">
+			<!--3 ボタン：登録 or 編集--> 
+		  	<input th:if="${movieForm.isNew}" type="submit" value="登録する">
+			<input th:unless="${movieForm.isNew}" type="submit" value="更新する">
+		</div>
 	</form>
-	<a th:href="@{/movie}">一覧へ戻る</a>
+	<div class="transitions edit">
+		<div class="back"><a th:href="@{/movie}">一覧へ戻る</a></div>
+	</div>
 	</section>
 		<footer th:replace="common :: footer"></footer>
 </body>

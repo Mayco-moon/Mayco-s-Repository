@@ -217,6 +217,8 @@ body{
 	height: 300px;
 	border-bottom: none;
 	margin-bottom: 25px;
+	padding: 10px;
+	background-image: linear-gradient(90deg, rgba(85, 85, 85, 1), rgba(0, 0, 0, 1));
 }
 .detail-cell.image img {
 	display: block;
@@ -245,7 +247,7 @@ body{
 	box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2);
 	
 	background-repeat: no-repeat;
-	background-position: center center;
+	background-position: top 19px center;
 	background-size: 50px;
 }
 .transitions div a{
@@ -258,7 +260,8 @@ body{
 .transitions div form input{
 	color:#fff;
 	text-align:center;
-	font-size:1em;
+	font-size: 0.8em;
+	line-height: 13;
 }
 
 .transitions div.delete{
@@ -313,15 +316,54 @@ body{
 */
 .form-wrapper tr{
 	display:flex;
+	border-bottom: 1px dotted #aaa;
+	line-height: 3;
 }
 .form-wrapper tr th{
-	width:25%;
+	width: 25%;
+	background: #eee;
+	font-size: 0.8em;
+	line-height: 4;
+}
+.form-wrapper tr th small {
+    display: block;
+    margin-top: -30px;
 }
 .form-wrapper tr td{
 	width:75%;
+	padding-left: 1em;
+}
+.form-wrapper tr td input,
+.form-wrapper tr td textarea {
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    line-height: 1.8;
+    width: 100%;
 }
 .form-wrapper tr.radio td label{
 	display:block;
+	line-height: 1.7;
+}
+.form-wrapper tr.radio td label input{
+	width:auto;
+}
+.form-wrapper tr td textarea{
+	margin-top: 15px;
+}
+.submit input {
+    display: block;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 5px;
+    background: #c13240;
+    color: #fff;
+    font-size: 1.2em;
+    margin: 10px auto 0px;
+	box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2);
+}
+.transitions.edit {
+	margin: 40px auto 30px;
+    justify-content: center;
 }
 
 
