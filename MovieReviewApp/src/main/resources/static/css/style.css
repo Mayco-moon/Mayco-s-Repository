@@ -1,0 +1,265 @@
+@charset "UTF-8";
+
+/* 
+   共通 
+*/
+
+/*  日本語フォント  */
+.ft-zm{
+	font-family: "Zen Maru Gothic", serif;
+	font-weight: 400;
+	font-style: normal;
+}
+.ft-zm.medium{
+	font-weight: 500;
+}
+.ft-zm.bold{
+	font-weight: 900;
+}
+/*  英字フォント  */
+.ft-nn{
+	font-family: "Nunito", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+.ft-nn.bold{
+	font-weight: 800;
+}
+/*  余白  */
+br.br30h{
+	display:inline-block;
+	height:30px;
+}
+/*  中央寄せ  */
+.ta-center{
+	text-align: center;
+}
+
+html {
+    width: 100%;
+}
+body{
+	margin:0 auto;
+}
+.section {
+	padding: 70px 20px 50px;
+	overflow: hidden;
+}
+
+/*   header   */
+.header {
+	width:100%;
+	height: 50px;
+	box-sizing: border-box;
+	background: #fff;
+	padding: 10px;
+	position: fixed;
+	box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2);
+}
+.header h1{
+	font-size: 1.2em;
+	line-height: 1.5;
+	margin: 0;
+}
+.header h1:before{
+	content:"";
+	
+	background-image:url(../images/icon.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size:contain;
+	
+	display:block;
+	width:30px;
+	height:30px;
+	float:left;
+	margin-right:8px;
+}
+.header h1 a {
+	color: #000;
+    text-decoration: none;
+}
+/*   footer   */
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    background: #26a1ab;
+    color: #fff;
+    text-align: center;
+    font-size: .7em;
+}
+.footer button.Btn{
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+	
+	display: none;
+	width: 50px;
+	height: 50px;
+	background: #d9213a;
+	color: #fff;
+	font-size: 2em;
+	border: none;
+	border-radius: 100%;
+}
+
+/* 
+   一覧ページ
+*/
+
+.mv {
+    overflow: hidden;
+}
+.mv img{
+	width: 100%;
+	border-radius: 10px;
+}
+.mv-under {
+    text-align: center;
+    line-height: 1;
+    margin: 0 auto 50px;
+}
+
+.wrapper {
+    display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+}
+.wrapper .cell{
+	display:block;
+	width:calc(93% / 2);
+	margin-bottom: 10px;
+}
+.wrapper .cell a {
+    text-decoration: none;
+}
+.wrapper .cell .thmb{
+	display:block;
+	width:100%;
+	margin-bottom: -8px;
+}
+.wrapper .cell .thmb img {
+    width: 100%;
+}
+.wrapper .cell .name {
+    display: block;
+    background: #000;
+    color: #fff;
+	text-align: right;
+	font-size: .8em;
+	line-height: 2.1;
+	padding-right: .5em;
+}
+.wrapper .cell .rating {
+    color: #d9213a;
+    text-align: right;
+}
+/* 
+  detailページ
+*/
+.detail-cell {
+    line-height: 2;
+    border-bottom: #aaa dotted 1px;
+}
+.detail-cell.image{
+	height: 300px;
+	border-bottom: none;
+	margin-bottom: 25px;
+}
+.detail-cell.image img {
+	display: block;
+    height: 100%;
+	margin: 0 auto;
+}
+.transitions {
+    margin: 30px auto;
+    display: flex;
+    justify-content: space-between;
+}
+.transitions div{
+	display:block;
+	width: calc(75% / 3);
+}
+.transitions div a{
+	display:block;
+	width: 100%;
+	height: 100%;
+	text-decoration: none;
+}
+.transitions div a,
+.transitions div form input{
+	color:#fff;
+	text-align:center;
+}
+
+.transitions div.delete{
+	background: #597BAB;
+}
+.transitions div.delete form input {
+	width: 100%;
+	height: 100%;
+	cursor:pointer;
+    border: none;
+	background-color: rgba(0, 0, 0, 0);
+}
+.transitions div.edit{
+	background:#888;
+}
+.transitions div.back{
+	background:#26a1ab;
+}
+
+/* 
+  ログイン・メニューページ
+*/
+.menu_wrapper .cell {
+	overflow: hidden;
+    display: block;
+    height: 60px;
+    background: #26a1ab;
+    margin-bottom: 20px;
+    border-radius: 30px;
+	box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2);
+}
+.menu_wrapper .cell a,
+.menu_wrapper .cell input{
+	display: block;
+	width: 100%;
+	height: 100%;
+	text-decoration: none;
+	text-align:center;
+	color: #fff;
+	font-size: 1.5em;
+	line-height: 2.4;
+}
+.menu_wrapper .cell input {
+    border: none;
+	background: #26a1ab;
+}
+/* 
+  新規登録・編集ページ
+*/
+.form-wrapper tr{
+	display:flex;
+}
+.form-wrapper tr th{
+	width:25%;
+}
+.form-wrapper tr td{
+	width:75%;
+}
+.form-wrapper tr.radio td label{
+	display:block;
+}
+
+
+@media screen and (min-width: 421px){
+	body{
+		width:75vw;
+		min-width:300px;
+		max-width:900px;
+	}
+}

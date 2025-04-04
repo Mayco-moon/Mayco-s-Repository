@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="common :: common-head('編集画面')"></head>
+<body>
+	<header th:replace="common :: header"></header>
+	<section class="section">
+		<!--1 タイトル：登録 or 編集-->
+		<h2 th:if="${movieForm.isNew}">新規データ登録</h2>
+		<h2 th:unless="${movieForm.isNew}">データ編集</h2>
+		<!--2 アクション：登録 or 編集-->
+		<form th:action="${movieForm.isNew} ? @{/movie/save} : @{/movie/update}"
+	     	  th:object="${movieForm}" method="post" enctype="multipart/form-data">
+			  
+			  <!--id入力は更新時のみなのでhidden-->
+		 	  <input type="hidden" th:field="*{id}">
+			  <table class="form-wrapper">
+				<tr>
+					<th>タイトル</th>
+					<td>
+						<input type="text" th:field="*{title}">
+						<span th:if="${#fields.hasErrors('title')}"
+					      th:errors="*{title}" style="color:#700">エラーがあれば表示</span>
+					</td>
+				</tr>
+				<tr class="radio">
+					<th>ジャンル</th>
+					<td>
+						<label><input type="radio" name="genre" th:field="*{genre}" th:value="ホラー">ホラー</label>
+						<label><input type="radio" name="genre" th:field="*{genre}" th:value="サスペンス">サスペンス</label>
+						<label><input type="radio" name="genre" th:field="*{genre}" th:value="ミュージカル">ミュージカル</label>
+						<label><input type="radio" name="genre" th:field="*{genre}" th:value="戦争">戦争</label>
+						<label><input type="radio" name="genre" th:field="*{genre}" th:value="ファンタジー">ファンタジー</label>
+						<label><input type="radio" name="genre" th:field="*{genre}" th:value="アニメ">アニメ</label>
+						<label><input type="radio" name="genre" th:field="*{genre}" th:value="ほのぼの">ほのぼの</label>
+						<label><input type="radio" name="genre" th:field="*{genre}" th:value="その他">その他</label>
+						
+						<span th:if="${#fields.hasErrors('genre')}"
+						th:errors="*{genre}" style="color:#700">エラーがあれば表示</span>
+					</td>
+				</tr>
+				<tr>
+					<th>公開した年</th>
+					<td>
+						<input type="number" th:field="*{releaseYear}">
+						<span th:if="${#fields.hasErrors('releaseYear')}"
+						th:errors="*{releaseYear}" style="color:#700">エラーがあれば表示</span>
+					</td>
+				</tr>
+				<tr>
+					<th>オススメ度：星評価 (1〜5)</th>
+					<td>
+						<input type="number" th:field="*{rating}">
+						<span th:if="${#fields.hasErrors('releaseYear')}"
+						th:errors="*{releaseYear}" style="color:#700">エラーがあれば表示</span>
+					</td>
+				</tr>
+				<tr>
+					<th>あらすじ</th>
+					<td>
+						<input type="text" th:field="*{summary}">
+						<span th:if="${#fields.hasErrors('summary')}"
+						th:errors="*{summary}" style="color:#700">エラーがあれば表示</span>
+					</td>
+				</tr>
+				<tr>
+					<th>感想</th>
+					<td>
+						<input type="text" th:field="*{review}">
+						<span th:if="${#fields.hasErrors('review')}"
+						th:errors="*{review}" style="color:#700">エラーがあれば表示</span>
+					</td>
+				</tr>
+				<tr>
+					<th>画像</th>
+				    <td>
+						<input type="file" name="imageFile">
+						<span th:if="${#fields.hasErrors('image')}"
+						th:errors="*{image}" style="color:#700">エラーがあれば表示</span>
+					</td>
+				</tr>
+				
+		  </table>
+		  <!--3 ボタン：登録 or 編集--> 
+		  <input th:if="${movieForm.isNew}" type="submit" value="登録">
+		  <input th:unless="${movieForm.isNew}" type="submit" value="更新">
+	</form>
+	<a th:href="@{/movie}">一覧へ戻る</a>
+	</section>
+		<footer th:replace="common :: footer"></footer>
+</body>
+</html>

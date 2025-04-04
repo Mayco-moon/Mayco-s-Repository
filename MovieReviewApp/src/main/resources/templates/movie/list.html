@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="common :: common-head('映画鑑賞記録 一覧')"></head>
+<body>
+	<header th:replace="common :: header"></header>
+	
+	<section class="section">
+		<!--完了アラート-->
+		<p th:if="${message}" th:text="${message}" style="color:#00a">完了メッセージ</p>
+		<!--エラーアラート-->
+		<p th:if="${errorMessage}" th:text="${errorMessage}" style="color:#700">エラーメッセージ</p>
+		
+		<div class="mv">
+			<img th:src="@{/images/mv.png}" alt="top画像">
+		</div>
+		<p class="mv-under ft-zm">あの日観たシーンを忘れる前に。</p>
+		
+		<h2 class="title ft-nn bold">Reviews List</h2>
+		
+		<div class="wrapper">
+			<div class="cell" th:each="movie : ${movies}"
+			th:classappend="${movie.genre == '戦争' ? 'war' 
+			               : (movie.genre == 'ミュージカル' ? 'musical' 
+			               : (movie.genre == 'サスペンス' ? 'suspense' 
+			               : 'default'))}">
+			
+				<a th:href="@{/movie/{id}(id=${movie.id})}">
+					<div class="thmb"><img th:if="${movie.image}" th:src="@{${movie.image}}"></div>
+					<div class="name" th:text="${movie.title}"></div>
+					<div class="rating">
+					    <span th:each="i : ${#numbers.sequence(1, 5)}" 
+					          th:text="${i <= movie.rating ? '★' : '☆'}"></span>
+					</div>
+				</a>
+			</div>
+		</div>
+		
+	</section>
+	<footer th:replace="common :: footer"></footer>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="common :: common-head('映画鑑賞記録 詳細')"></head>
+<body>
+	<header th:replace="common :: header"></header>
+	<section class="section">
+		<div class="detail-cell image">
+			<img th:if="${movie.image}" th:src="@{${movie.image}}">
+		</div>
+		<div class="detail-cell name">
+			<th>タイトル</th>
+			<td th:text="${movie.title}"></td>
+		</div>
+		<div class="detail-cell genre">
+			<th>ジャンル</th>
+			<td th:text="${movie.genre}"></td>
+		</div>
+		<div class="detail-cell releaseYear">
+			<th>公開年</th>
+			<td th:text="${movie.releaseYear}"></td>
+		</div>
+		<div class="detail-cell rating">
+			<th>オススメ度</th>
+			<td><span th:each="i : ${#numbers.sequence(1, 5)}" 
+				th:text="${i <= movie.rating ? '★' : '☆'}"></span></td>
+		</div>
+		<div class="detail-cell summary">
+			<th>あらすじ</th>
+			<td th:text="${movie.summary}"></td>
+		</div>
+		<div class="detail-cell review">
+			<th>感想</th>
+			<td th:text="${movie.review}"></td>
+		</div>
+		<div class="detail-cell createdAt">
+			<th>登録日時</th>
+			<td th:text="${movie.createdAt.format(
+				           T(java.time.format.DateTimeFormatter).ofPattern('yyyy / MM / dd'))}"></td>
+		</div>
+		<div class="detail-cell updatedAt">
+			<th>更新日時</th>
+			<td th:text="${movie.updatedAt.format(
+				           T(java.time.format.DateTimeFormatter).ofPattern('yyyy / MM / dd'))}"></td>
+		</div>
+		<div class="transitions">
+			<!--削除は管理者でログインしないと表示されないようにした（つもり）-->
+			<div class="delete" sec:authorize="hasAuthority('ADMIN')"><form th:action="@{/movie/delete/{id}(id=${movie.id})}" method="post"><input type="submit" value="削除する"></form></div>
+			<!--編集も管理者でログインしないと表示されないようにした（つもり）-->
+			<div class="edit" sec:authorize="hasAuthority('ADMIN')"><a th:href="@{/movie/edit/{id}(id=${movie.id})}">編集する</a></div>
+			<div class="back"><a th:href="@{/movie}">一覧へ戻る</a></div>
+		</div>
+	</div>
+		
+	</section>
+	<footer th:replace="common :: footer"></footer>
+</body>
+</html>

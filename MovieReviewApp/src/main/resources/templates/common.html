@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<!--meta head-->
+<head th:fragment="common-head(title)">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--ファビコン-->
+	<link rel="icon" type="image/x-icon" th:href="@{/images/favicon.ico}">
+	<title th:text="${title}">Default Title</title>
+	<!--共通css-->
+	<link th:href="@{/css/style.css}" rel="stylesheet" type="text/css">
+	<!--共通js-->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script th:src="@{/js/script.js}" defer></script>
+	<!--google font-->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200..1000&family=Zen+Maru+Gothic:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+	<!--hedder-->
+	<div th:fragment="header" class="header">
+		<h1 class="main_title ft-nn bold"><a th:href="@{/}">Movie Review Collection</a></h1>
+	</div>
+	
+	<!--footer-->
+	<div th:fragment="footer" class="footer">
+		<!-- トップへ戻るボタン -->
+		<button id="scrollTopBtn" class="Btn">▲</button>
+		<div class="footer_inner ft-nn">
+			<p id="copy">©Copyright Yabuki Meiko. All rights reserved.</p>
+		</div> 
+	</div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<head th:replace="common :: common-head('メニュー')"></head>
+<body>
+	<header th:replace="common :: header"></header>
+	<section class="section">
+		<h2 class="ft-zm ta-center">メニュー画面</h2>
+		<div class="menu_wrapper">
+			<div class="cell ft-zm"><a th:href="@{/movie}">データ一覧</a></div>
+			<!--新規登録は管理者でログインしないと表示されないようにした-->
+			<div class="cell ft-zm" sec:authorize="hasAuthority('ADMIN')"><a th:href="@{/movie/form}">新規登録</a></div>
+			<div class="cell ft-zm"><form th:action="@{/logout}" method="post"><input type="submit" value="ログアウト" class="ft-zm"></form></div>
+		</div>
+		
+		<div sec:authorize="hasAuthority('ADMIN')">
+			<!--【管理者権限で表示される部分】-->
+		</div>
+		<div sec:authorize="hasAuthority('USER')">
+			<!--【一般権限で表示される部分】-->
+		</div>
+	
+		<!--<div sec:authentication="name">
+			ログイン情報のname値に書き変わる
+		</div>
+		<div th:text="${#authentication.principal.displayname}">
+			新たに追加したdisplayname値に書き換わる
+		</div>-->
+		<div sec:authrize="isAuthenticated()">
+			<!--認証されたユーザーのみ表示-->
+		</div>
+	</section>
+	<footer th:replace="common :: footer"></footer>
+</body>
+</html>
