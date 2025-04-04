@@ -193,6 +193,7 @@ body{
 .transitions div form input{
 	color:#fff;
 	text-align:center;
+	font-size:1em;
 }
 
 .transitions div.delete{
