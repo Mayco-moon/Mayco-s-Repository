@@ -55,6 +55,7 @@ body{
 	padding: 10px;
 	position: fixed;
 	box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2);
+	z-index: 1;
 }
 .header h1{
 	font-size: 1.2em;
@@ -64,7 +65,7 @@ body{
 .header h1:before{
 	content:"";
 	
-	background-image:url(../images/icon.png);
+	background-image:url('../images/icon.png');
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size:contain;
@@ -90,6 +91,7 @@ body{
     color: #fff;
     text-align: center;
     font-size: .7em;
+	z-index: 1;
 }
 .footer button.Btn{
 	position: absolute;
@@ -104,6 +106,7 @@ body{
 	font-size: 2em;
 	border: none;
 	border-radius: 100%;
+	box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2);
 }
 
 /* 
@@ -129,10 +132,56 @@ body{
 	justify-content: space-between;
 }
 .wrapper .cell{
+	position: relative;
 	display:block;
 	width:calc(93% / 2);
 	margin-bottom: 10px;
 }
+.wrapper .cell:before {
+	content: "";
+	display: block;
+	position: absolute;
+	left: -5px;
+	top: -3px;
+	border-radius: 0 10px 10px 0;
+	color: #fff;
+	padding: 5px 0.5em;
+	font-size: 0.8em;
+	line-height: 1;
+}
+.wrapper .cell.horror:before{
+	content: "ホラー";
+	background:#c13240;
+}
+.wrapper .cell.suspense:before{
+	content: "サスペンス";
+	background:#a356ae;
+}
+.wrapper .cell.musical:before{
+	content: "ミュージカル";
+	background:#c1387a;
+}
+.wrapper .cell.war:before{
+	content: "戦争";
+	background:#798897;
+}
+.wrapper .cell.fantasy:before{
+	content: "ファンタジー";
+	background:#6573cf;
+}
+.wrapper .cell.anime:before{
+	content: "アニメ";
+	background:#6ec132;
+}
+.wrapper .cell.sciencefiction:before{
+	content: "SF";
+	background:#0097c5;
+}
+.wrapper .cell.other:before{
+	content: "その他";
+	background:#c1b532;
+}
+
 .wrapper .cell a {
     text-decoration: none;
 }
@@ -161,7 +210,7 @@ body{
   detailページ
 */
 .detail-cell {
-    line-height: 2;
+    line-height: 3;
     border-bottom: #aaa dotted 1px;
 }
 .detail-cell.image{
@@ -174,14 +223,30 @@ body{
     height: 100%;
 	margin: 0 auto;
 }
+.detail-cell.summary,
+.detail-cell.review {
+    padding: 10px 0;
+    line-height: 1.8;
+}
+.detail-cell .subTitle {
+    display: block;
+	margin-bottom: 10px;
+}
 .transitions {
     margin: 30px auto;
     display: flex;
     justify-content: space-between;
 }
 .transitions div{
-	display:block;
-	width: calc(75% / 3);
+	display: block;
+	height: 110px;
+	width: 110px;
+	border-radius: 55px;
+	box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2);
+	
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 50px;
 }
 .transitions div a{
 	display:block;
@@ -197,7 +262,8 @@ body{
 }
 
 .transitions div.delete{
-	background: #597BAB;
+	background-image:url('../images/delete.svg');
+	background-color: #597BAB;
 }
 .transitions div.delete form input {
 	width: 100%;
@@ -207,10 +273,12 @@ body{
 	background-color: rgba(0, 0, 0, 0);
 }
 .transitions div.edit{
-	background:#888;
+	background-image:url('../images/edit.svg');
+	background-color:#888;
 }
 .transitions div.back{
-	background:#26a1ab;
+	background-image:url('../images/back.svg');
+	background-color:#26a1ab;
 }
 
 /* 
