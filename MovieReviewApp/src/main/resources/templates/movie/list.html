@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:replace="common :: common-head('映画鑑賞記録 一覧')"></head>
-<body>
+<body class="fade-container">
 	<header th:replace="common :: header"></header>
 	
 	<section class="section">
@@ -11,7 +11,8 @@
 		<p th:if="${errorMessage}" th:text="${errorMessage}" style="color:#700">エラーメッセージ</p>
 		
 		<div class="mv">
-			<img th:src="@{/images/mv.png}" alt="top画像">
+			<img class="pc-hide" th:src="@{/images/mv_sp.png}" alt="top sp画像">
+			<img class="sp-hide" th:src="@{/images/mv_pc.png}" alt="top pc画像">
 		</div>
 		<p class="mv-under ft-zm">あの日観たシーンを忘れる前に。</p>
 		

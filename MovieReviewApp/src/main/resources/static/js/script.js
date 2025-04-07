@@ -1,4 +1,8 @@
 $(function(){
+	// ページ全体1秒かけてフェードイン
+	$(document).ready(function () {
+	  $("body").fadeIn(750);
+	});
 	
 	//* 画像のフェードアップ
 	$(window).on('load',function(){

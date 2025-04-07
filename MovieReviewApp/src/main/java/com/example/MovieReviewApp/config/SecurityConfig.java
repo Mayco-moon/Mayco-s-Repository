@@ -26,6 +26,8 @@ public class SecurityConfig {
 		.authorizeHttpRequests(authz -> authz //ラムダ式。設計上必要な記述。やってることは左から右へ流してるだけ～
 		//「/login」へのアクセスには認証不要
 		.requestMatchers("/login").permitAll()
+		// ※最初にlogin画面表示さす時、cssとかにも制限かかっちゃってるので一部の例外をここで設定※
+		.requestMatchers("/css/style.css", "/js/script.js", "/images/icon.png").permitAll()
 		// 【管理者権限設定】url:/movie/**は管理者(ADMIN)しかアクセスできない
 		.requestMatchers("/movie/**").hasAuthority("ADMIN")
 		//それ以外のリクエストは要認証
