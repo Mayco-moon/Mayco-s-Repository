@@ -6,12 +6,12 @@
 	<section class="section">
 		<h2 class="ft-zm ta-center">ログイン画面</h2>
 		<div th:if="${param.error}">
-			<p style="color: #700;">usernameまたはpasswordが違います</p>
+			<p style="color: #c00;" class="ft-zm ta-center">usernameまたはpasswordが違います</p>
 		</div>
 	
 		<!--ログアウト表示 -->
 		<div th:if="${param.logout}">
-			<p style="color: #00a">ログアウトしました</p>
+			<p style="color: #00a" class="ft-zm ta-center">ログアウトしました</p>
 		</div>
 	
 		<form class="login" th:action="@{/authentication}" method="post" th:object="${loginForm}">
@@ -26,7 +26,7 @@
 				<input type="password" th:field="*{passwordInput}">
 			</div>
 			<div class="loginBtn">
-				<input type="submit" value="ログインする" >
+				<input type="submit" value="ログインする" class="ft-zm">
 			</div>
 		</form>
 	</section>

@@ -134,7 +134,6 @@ body.fade-container {
 /* 
    一覧ページ
 */
-
 .mv {
     overflow: hidden;
 }
@@ -147,7 +146,13 @@ body.fade-container {
     line-height: 1;
     margin: 20px auto 50px;
 }
-
+h2.title:before{
+	content:url(../images/movie.svg);
+	display:block;
+	width: 35px;
+	float: left;
+	margin: -3px 5px 0 0;
+}
 .wrapper {
     display: flex;
 	flex-flow: row wrap;
@@ -231,9 +236,10 @@ body.fade-container {
     width: 100%;
 }
 .wrapper .cell .name {
-    display: block;
-    background: #000;
-    color: #fff;
+	display: block;
+	background: #000;
+	height: 24px;
+	color: #fff;
 	text-align: right;
 	font-size: .8em;
 	line-height: 2.1;
@@ -325,8 +331,8 @@ body.fade-container {
   ログイン・メニューページ
 */
 section form.login {
-	    width: 80%;
 	    margin: 0 auto;
+		text-align: center;
 }
 section form.login input {
     line-height: 1.8;
@@ -452,13 +458,6 @@ section form .loginBtn input {
 	/* 
 	  一覧ページ
 	*/
-	h2.title:before{
-		content:url(../images/movie.svg);
-		display:block;
-		width: 35px;
-		float: left;
-		margin: -3px 5px 0 0;
-	}
 	.wrapper .cell {
 	    width: calc(93% / 3);
 	    margin-bottom: 10px;
@@ -484,7 +483,6 @@ section form .loginBtn input {
 	  ログイン・メニューページ
 	*/
 	section form.login {
-		width: 31%;
 		transition-duration: 0.3s;
 	}
 	section form.login:hover{

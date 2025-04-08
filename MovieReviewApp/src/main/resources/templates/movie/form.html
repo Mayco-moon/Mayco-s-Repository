@@ -5,8 +5,8 @@
 	<header th:replace="common :: header"></header>
 	<section class="section">
 		<!--1 タイトル：登録 or 編集-->
-		<h2 th:if="${movieForm.isNew}">新規データ登録</h2>
-		<h2 th:unless="${movieForm.isNew}">データ編集</h2>
+		<h2 th:if="${movieForm.isNew}" class="ft-zm">新規データ登録</h2>
+		<h2 th:unless="${movieForm.isNew}" class="ft-zm">データ編集</h2>
 		<!--2 アクション：登録 or 編集-->
 		<form th:action="${movieForm.isNew} ? @{/movie/save} : @{/movie/update}"
 	     	  th:object="${movieForm}" method="post" enctype="multipart/form-data">
@@ -83,8 +83,8 @@
 		  </table>
 		  <div class="submit">
 			<!--3 ボタン：登録 or 編集--> 
-		  	<input th:if="${movieForm.isNew}" type="submit" value="登録する">
-			<input th:unless="${movieForm.isNew}" type="submit" value="更新する">
+		  	<input th:if="${movieForm.isNew}" type="submit" value="登録する" class="ft-zm">
+			<input th:unless="${movieForm.isNew}" type="submit" value="更新する" class="ft-zm">
 		</div>
 	</form>
 	<div class="transitions edit">

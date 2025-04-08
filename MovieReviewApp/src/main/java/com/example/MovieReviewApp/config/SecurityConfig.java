@@ -29,7 +29,9 @@ public class SecurityConfig {
 		// ※最初にlogin画面表示さす時、cssとかにも制限かかっちゃってるので一部の例外をここで設定※
 		.requestMatchers("/css/style.css", "/js/script.js", "/images/icon.png").permitAll()
 		// 【管理者権限設定】url:/movie/**は管理者(ADMIN)しかアクセスできない
-		.requestMatchers("/movie/**").hasAuthority("ADMIN")
+		//.requestMatchers("/movie/**").hasAuthority("ADMIN")
+		// 【ログインできる人設定】url:/movie/**はUSERログインした人のみアクセス可
+		.requestMatchers("/movie/**").hasAuthority("USER")
 		//それ以外のリクエストは要認証
 		.anyRequest().authenticated())
 		

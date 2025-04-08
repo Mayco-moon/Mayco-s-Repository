@@ -54,8 +54,8 @@ $(function () {
   });
   
 
-  // ソート切り替え時にふわっと表示される
+  // ソート切り替え時にふわっと
   $(".cell").each(function(index) {
-    $(this).css("opacity", "0").delay(100 * index).animate({ opacity: 1 }, 500);
+    $(this).css("opacity", "0").delay(100 * index).animate({ opacity: 1 }, 750);
   });
 });
