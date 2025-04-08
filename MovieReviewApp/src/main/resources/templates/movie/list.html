@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:replace="common :: common-head('映画鑑賞記録 一覧')"></head>
-<body class="fade-container">
+<body>
 	<header th:replace="common :: header"></header>
 	
 	<section class="section">
@@ -17,6 +17,18 @@
 		<p class="mv-under ft-zm">あの日観たシーンを忘れる前に。</p>
 		
 		<h2 class="title ft-nn bold">Reviews List</h2>
+		
+		<!--ソートタブ-->
+		<form method="get" action="#">
+			<label for="sort"><span class="ft-zm">並び順：</span></label>
+			<select name="sort" id="sort" onchange="this.form.submit()">
+				<option value="">-- 選択してください --</option>
+				<option value="id" th:selected="${param.sort == 'id'}">登録が新しい順</option>
+				<option value="id_asc" th:selected="${param.sort == 'id_asc'}">登録が古い順</option>
+				<option value="rating" th:selected="${param.sort == 'rating'}">評価（高い順）</option>
+				<option value="rating_asc" th:selected="${param.sort == 'rating_asc'}">評価（低い順）</option>
+			</select>
+		</form>
 		
 		<div class="wrapper">
 			<div class="cell" th:each="movie : ${movies}"

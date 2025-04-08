@@ -2,10 +2,23 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.MovieReviewApp.repository.MovieMapper">
 
-<!-- 全件検索（id降順に変更済み） -->
-<select id="selectAllSortedByIdDesc" resultType="com.example.MovieReviewApp.entity.Movie">
+<!-- 全件検索 -->
+<select id="selectAll" resultType="com.example.MovieReviewApp.entity.Movie">
 	SELECT id, title, genre, release_year AS releaseYear, rating, summary, review, image, created_at AS createdAt, updated_at AS updatedAt
 	FROM movies
+</select>
+
+<!-- 一覧データをいろんな条件でソートする -->
+<select id="selectAllSorted" resultType="com.example.MovieReviewApp.entity.Movie">
+   SELECT id, title, genre, release_year AS releaseYear, rating, summary, review, image, created_at AS createdAt, updated_at AS updatedAt
+   FROM movies
+   ORDER BY <choose>
+       <when test="sortBy == 'id'">id DESC</when>
+       <when test="sortBy == 'id_asc'">id ASC</when>
+       <when test="sortBy == 'rating'">rating DESC</when>
+       <when test="sortBy == 'rating_asc'">rating ASC</when>
+       <otherwise>id DESC</otherwise><!-- デフォルト -->
+     </choose>
 </select>
 
 <!-- 1件検索 -->

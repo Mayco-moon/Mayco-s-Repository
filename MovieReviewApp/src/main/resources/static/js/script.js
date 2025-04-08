@@ -53,5 +53,28 @@ $(function(){
 	    });
 	});
 	
+	// ソートフォーム送信時にスクロール位置をURLに追加
+	    $(document).ready(function() {
+	        $('form').submit(function(event) {
+	            var scrollPosition = $(window).scrollTop(); // 現在のスクロール位置を取得
+	            var sortValue = $('#sort').val(); // 現在選ばれているソート値を取得
+	            var currentUrl = window.location.href.split('?')[0]; // 現在のURLからクエリを削除
+	            
+	            if (scrollPosition > 0 || sortValue) {
+	                // URLにスクロール位置とソート情報を追加
+	                window.location.href = currentUrl + '?scroll=' + scrollPosition + '&sort=' + sortValue;
+	            } else {
+	                // 通常のフォーム送信
+	                this.submit();
+	            }
+	        });
+
+	        // ページが読み込まれたときにスクロール位置を復元
+	        var scrollPosition = new URLSearchParams(window.location.search).get('scroll');
+	        if (scrollPosition) {
+	            $(window).scrollTop(scrollPosition); // スクロール位置を復元
+	        }
+	    });
+	
 	
 });

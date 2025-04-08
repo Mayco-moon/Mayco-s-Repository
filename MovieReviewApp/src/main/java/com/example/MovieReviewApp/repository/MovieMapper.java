@@ -10,9 +10,10 @@ import com.example.MovieReviewApp.entity.Movie;
 @Mapper
 public interface MovieMapper {
 	//全件取得
-	//List<Movie> selectAll();
-	//全件をid降順で取得するメソッド
-    List<Movie> selectAllSortedByIdDesc();
+	List<Movie> selectAll();
+	
+	// 一覧データをいろんな条件でソートする
+	List<Movie> selectAllSorted(@Param("sortBy") String sortBy);
 	
 	//1件詳細表示
 	Movie selectById(@Param("id") Integer id);

@@ -6,9 +6,10 @@ import com.example.MovieReviewApp.entity.Movie;
 
 public interface MovieService {
 	//全Movie検索
-	//List<Movie>findAllMovie();
-	// id降順で全Movie検索する仕様に変更
-    List<Movie> findAllMovieSortedByIdDesc();
+	List<Movie>findAllMovie();
+	
+	// ソート付き検索
+    List<Movie> findAllSorted(String sortBy);
 	
 	//該当するidのデータのみ検索
 	Movie findByIdMovie(Integer id);

@@ -19,15 +19,14 @@ public class MovieServiceImpl implements MovieService {
 	//DI
 	private final MovieMapper movieMapper;
 	
-	//@Override
-	//public List<Movie> findAllMovie() {
-	//	return movieMapper.selectAll();
-	//}
-	// id降順で全Movie検索する仕様に変更
-    @Override
-    public List<Movie> findAllMovieSortedByIdDesc() {
-    	return movieMapper.selectAllSortedByIdDesc();
-    }
+	@Override
+	public List<Movie> findAllMovie() {
+		return movieMapper.selectAll();
+	}
+	@Override
+	public List<Movie> findAllSorted(String sortBy) {
+	    return movieMapper.selectAllSorted(sortBy);
+	}
 
 	@Override
 	public Movie findByIdMovie(Integer id) {

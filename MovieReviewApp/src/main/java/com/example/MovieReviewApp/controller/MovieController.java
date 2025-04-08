@@ -33,18 +33,20 @@ public class MovieController {
 	//DI
 	private final MovieService service;
 	
-	//全件表示
+	//全件表示（デフォ）
 	//@GetMapping
 	//public String list(Model model) {
 	//	model.addAttribute("movies", service.findAllMovie());
 	//	return "movie/list";
 	//}
-	// 映画データをid降順で表示する仕様に変更
-    @GetMapping
-    public String list(Model model) {
-        model.addAttribute("movies", service.findAllMovieSortedByIdDesc());
-        return "movie/list";
-    }
+	
+	//一覧表示
+	@GetMapping
+	public String list(@RequestParam(value = "sort", defaultValue = "id_desc") String sort, Model model) {
+	    // ソートを実行
+	    model.addAttribute("movies", service.findAllSorted(sort));
+	    return "movie/list";
+	}
 	
 	//詳細表示
 	@GetMapping("/{id}")

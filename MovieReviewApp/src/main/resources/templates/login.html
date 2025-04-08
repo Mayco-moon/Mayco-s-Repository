@@ -4,7 +4,7 @@
 <body>
 	<header th:replace="common :: header"></header>
 	<section class="section">
-		<h2 class="ft-zm">ログイン画面</h2>
+		<h2 class="ft-zm ta-center">ログイン画面</h2>
 		<div th:if="${param.error}">
 			<p style="color: #700;">usernameまたはpasswordが違います</p>
 		</div>
@@ -14,7 +14,7 @@
 			<p style="color: #00a">ログアウトしました</p>
 		</div>
 	
-		<form th:action="@{/authentication}" method="post" th:object="${loginForm}">
+		<form class="login" th:action="@{/authentication}" method="post" th:object="${loginForm}">
 			<div>
 				<!-- ユーザー名 -->
 				<label for="usernameInput">username</label>
@@ -25,8 +25,8 @@
 				<label for="passwordInput">password </label>
 				<input type="password" th:field="*{passwordInput}">
 			</div>
-			<div>
-				<input type="submit" value="login" >
+			<div class="loginBtn">
+				<input type="submit" value="ログインする" >
 			</div>
 		</form>
 	</section>

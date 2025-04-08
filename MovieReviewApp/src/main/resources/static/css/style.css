@@ -62,6 +62,7 @@ body.fade-container {
 }
 .section {
 	padding: 70px 20px 50px;
+	box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2);
 	overflow: hidden;
 }
 
@@ -70,7 +71,7 @@ body.fade-container {
 	width:100%;
 	height: 50px;
 	box-sizing: border-box;
-	background: #fff;
+	background: #26a1ab;
 	padding: 10px;
 	position: fixed;
 	left: 0;
@@ -98,7 +99,7 @@ body.fade-container {
 	margin-right:8px;
 }
 .header h1 a {
-	color: #000;
+	color: #fff;
     text-decoration: none;
 }
 /*   footer   */
@@ -151,6 +152,7 @@ body.fade-container {
     display: flex;
 	flex-flow: row wrap;
 	justify-content: space-between;
+	margin-top:20px
 }
 .wrapper .cell{
 	position: relative;
@@ -308,6 +310,24 @@ body.fade-container {
 /* 
   ログイン・メニューページ
 */
+section form.login {
+	    width: 80%;
+	    margin: 0 auto;
+}
+section form.login input {
+    line-height: 1.8;
+    border: 1px solid #aaa;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+section form .loginBtn input {
+	display: block;
+	margin: 10px auto 0;
+	background: #26a1ab;
+	color: #fff;
+	padding: 10px 20px;
+	border: none;
+}
 .menu_wrapper .cell {
 	overflow: hidden;
     display: block;
@@ -402,6 +422,14 @@ body.fade-container {
 		min-width:300px;
 		max-width:900px;
 	}
+	/*   footer   */
+	.footer button.Btn{
+		transition-duration: 0.3s;
+	}
+	.footer button.Btn:hover{
+		opacity:.7;
+		transition-duration: 0.3s;
+	}
 	
 	/* 
 	  detailページ
@@ -409,6 +437,50 @@ body.fade-container {
 	.wrapper .cell {
 	    width: calc(93% / 3);
 	    margin-bottom: 10px;
+		transition-duration: 0.3s;
+	}
+	.wrapper .cell:hover{
+		opacity:.7;
+		transition-duration: 0.3s;
+	}
+	.detail-cell.image {
+	    height: 450px;
+	}
+	.transitions div{
+		transition-duration: 0.3s;
+	}
+	.transitions div:hover{
+		opacity:.7;
+		transition-duration: 0.3s;
+	}
+	/* 
+	  ログイン・メニューページ
+	*/
+	section form.login {
+		width: 31%;
+		transition-duration: 0.3s;
+	}
+	section form.login:hover{
+		opacity:.7;
+		transition-duration: 0.3s;
+	}
+	
+	.menu_wrapper {
+	    display: flex;
+		justify-content:space-between;
+	}
+	.menu_wrapper .cell{
+		width:calc(95%/3);
+	}
+	.menu_wrapper .cell a,
+	.menu_wrapper .cell input{
+		transition-duration: 0.3s;
+	}
+	.menu_wrapper .cell a:hover,
+	.menu_wrapper .cell input:hover{
+		transform: scale(.9);
+		opacity:.7;
+		transition-duration: 0.3s;
 	}
 	
 	/* 
@@ -416,6 +488,13 @@ body.fade-container {
 	*/
 	table.form-wrapper {
 	    width: 95%;
+	}
+	.submit input{
+		transition-duration: 0.3s;
+	}
+	.submit input:hover{
+		opacity:.7;
+		transition-duration: 0.3s;
 	}
 	.transitions {
 	    width: 60%;
