@@ -172,6 +172,20 @@ body.fade-container {
 	font-size: 0.8em;
 	line-height: 1;
 }
+/*ソート切り替え時にふわっと表示*/
+.wrapper .cell.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.8s ease-in forwards;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .wrapper .cell.horror:before{
 	content: "ホラー";
 	background:#c13240;
@@ -413,7 +427,11 @@ section form .loginBtn input {
 	   共通 
 	*/
 	html{
-		background:#ffe9c7;
+		background-color: #ffe9c7;
+		background-image: url(/images/bg.png);
+		background-position: left top;
+		background-repeat: no-repeat;
+		background-attachment: fixed;
 	}
 	body{
 		background:#fff;
@@ -432,17 +450,26 @@ section form .loginBtn input {
 	}
 	
 	/* 
-	  detailページ
+	  一覧ページ
 	*/
+	h2.title:before{
+		content:url(../images/movie.svg);
+		display:block;
+		width: 35px;
+		float: left;
+		margin: -3px 5px 0 0;
+	}
 	.wrapper .cell {
 	    width: calc(93% / 3);
 	    margin-bottom: 10px;
-		transition-duration: 0.3s;
+		transition: opacity 0.3s ease;
 	}
 	.wrapper .cell:hover{
-		opacity:.7;
-		transition-duration: 0.3s;
+		opacity:.7!important;
 	}
+	/* 
+	  detailページ
+	*/
 	.detail-cell.image {
 	    height: 450px;
 	}

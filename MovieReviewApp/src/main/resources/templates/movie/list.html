@@ -14,12 +14,13 @@
 			<img class="pc-hide" th:src="@{/images/mv_sp.png}" alt="top sp画像">
 			<img class="sp-hide" th:src="@{/images/mv_pc.png}" alt="top pc画像">
 		</div>
-		<p class="mv-under ft-zm">あの日観たシーンを忘れる前に。</p>
+		<p class="mv-under ft-zm" id="here">あの日観たシーンを忘れる前に。</p>
 		
+		<hr>
 		<h2 class="title ft-nn bold">Reviews List</h2>
 		
 		<!--ソートタブ-->
-		<form method="get" action="#">
+		<form method="get" action="#here">
 			<label for="sort"><span class="ft-zm">並び順：</span></label>
 			<select name="sort" id="sort" onchange="this.form.submit()">
 				<option value="">-- 選択してください --</option>
