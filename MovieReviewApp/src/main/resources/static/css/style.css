@@ -448,6 +448,9 @@ section form .loginBtn input {
 	}
 	/*   footer   */
 	.footer button.Btn{
+		width: 75px;
+		height: 75px;
+		font-size: 3.5em;
 		transition-duration: 0.3s;
 	}
 	.footer button.Btn:hover{
