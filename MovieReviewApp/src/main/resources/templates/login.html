@@ -5,6 +5,12 @@
 	<header th:replace="common :: header"></header>
 	<section class="section">
 		<h2 class="ft-zm ta-center">ログイン画面</h2>
+		
+		<div class="mv">
+			<img class="pc-hide" th:src="@{/images/mv_sp.png}" alt="top sp画像">
+			<img class="sp-hide" th:src="@{/images/mv_pc.png}" alt="top pc画像">
+		</div>
+		
 		<div th:if="${param.error}">
 			<p style="color: #c00;" class="ft-zm ta-center">usernameまたはpasswordが違います</p>
 		</div>
@@ -18,12 +24,14 @@
 			<div>
 				<!-- ユーザー名 -->
 				<label for="usernameInput">username</label>
-				<input type="text" th:field="*{usernameInput}">
+				<input type="text" th:field="*{usernameInput}" placeholder="user">
+				<p class="desc">一般ユーザーは「user」と入力してください。</p>
 			</div>
 			<div>
 				<!-- パスワード -->
 				<label for="passwordInput">password </label>
-				<input type="password" th:field="*{passwordInput}">
+				<input type="password" th:field="*{passwordInput}" placeholder="userpass">
+				<p class="desc">一般ユーザーは「userpass」と入力してください。</p>
 			</div>
 			<div class="loginBtn">
 				<input type="submit" value="ログインする" class="ft-zm">

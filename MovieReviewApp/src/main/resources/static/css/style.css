@@ -331,8 +331,14 @@ h2.title:before{
   ログイン・メニューページ
 */
 section form.login {
-	    margin: 0 auto;
+	    margin: 30px auto;
 		text-align: center;
+}
+section form.login .desc {
+    line-height: 1;
+    font-size: 0.7em;
+    margin: 0px auto 25px;
+    color: #999;
 }
 section form.login input {
     line-height: 1.8;
