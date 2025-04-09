@@ -195,6 +195,10 @@ h2.title:before{
 	content: "ホラー";
 	background:#c13240;
 }
+.wrapper .cell.action:before{
+	content: "アクション";
+	background:#c13240;
+}
 .wrapper .cell.suspense:before{
 	content: "サスペンス";
 	background:#a356ae;
@@ -207,17 +211,21 @@ h2.title:before{
 	content: "戦争";
 	background:#798897;
 }
-.wrapper .cell.fantasy:before{
-	content: "ファンタジー";
+.wrapper .cell.sfFantasy:before{
+	content: "SF・ファンタジー";
 	background:#6573cf;
 }
 .wrapper .cell.anime:before{
 	content: "アニメ";
 	background:#6ec132;
 }
-.wrapper .cell.sciencefiction:before{
-	content: "SF";
-	background:#0097c5;
+.wrapper .cell.comedy:before{
+	content: "コメディ";
+	background:#6ec132;
+}
+.wrapper .cell.honobono:before{
+	content: "ほのぼの";
+	background:#f2590d;
 }
 .wrapper .cell.other:before{
 	content: "その他";

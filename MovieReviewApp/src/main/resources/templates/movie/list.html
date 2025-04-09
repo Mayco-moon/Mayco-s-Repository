@@ -33,16 +33,17 @@
 		
 		<div class="wrapper">
 			<div class="cell" th:each="movie : ${movies}"
-			th:classappend="${movie.genre == 'ホラー' ? 'horror'  
+			th:classappend="${movie.genre == 'ホラー' ? 'horror'
+			                : (movie.genre == 'アクション' ? 'action'   
 							: (movie.genre == 'サスペンス' ? 'suspense' 
 							: (movie.genre == 'ミュージカル' ? 'musical'
 							: (movie.genre == '戦争' ? 'war'
-							: (movie.genre == 'ファンタジー' ? 'fantasy'
+							: (movie.genre == 'SF・ファンタジー' ? 'sfFantasy'
 							: (movie.genre == 'アニメ' ? 'anime'
-							: (movie.genre == 'SF' ? 'sciencefiction'
+							: (movie.genre == 'コメディ' ? 'comedy'
 							: (movie.genre == 'ほのぼの' ? 'honobono'
 							: (movie.genre == 'その他' ? 'other'
-							: 'default'))))))))}">
+							: 'default')))))))))}">
 			
 				<a th:href="@{/movie/{id}(id=${movie.id})}">
 					<div class="thmb"><img th:if="${movie.image}" th:src="@{${movie.image}}"></div>

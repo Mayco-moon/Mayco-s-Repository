@@ -14,7 +14,6 @@ public class MovieHelper {
 		movie.setRating(form.getRating());
 		movie.setSummary(form.getSummary());
 		movie.setReview(form.getReview());
-		//movie.setImage(form.getImage());
 		if (imagePath != null && !imagePath.isEmpty()) {
 	            movie.setImage(imagePath);
 	        }
@@ -31,7 +30,6 @@ public class MovieHelper {
 		form.setRating(movie.getRating());
 		form.setSummary(movie.getSummary());
 		form.setReview(movie.getReview());
-		//form.setImage(movie.getImage());
 		form.setImage(movie.getImage());
 		//更新画面設定
 		form.setIsNew(false);

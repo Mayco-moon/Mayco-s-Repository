@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -152,7 +153,7 @@ public class MovieController {
 				return "movie/form";
 			}
 			
-			 // 画像アップロード処理
+			// 画像アップロード処理
 		    String imagePath = null;
 		    if (!imageFile.isEmpty()) {
 		        try {
@@ -165,10 +166,18 @@ public class MovieController {
 		                Files.createDirectories(uploadPath);
 		            }
 
+		            // 既存の画像がある場合、そのファイルを削除
+		            if (form.getImage() != null) {  // 以前の画像パスが存在する場合
+		                Path oldImagePath = uploadPath.resolve(form.getImage().substring(1));  // "/uploadImages/"を除去
+		                Files.deleteIfExists(oldImagePath);  // 既存の画像を削除
+		            }
+
 		            // ファイルを保存
 		            String fileName = imageFile.getOriginalFilename();
 		            Path filePath = uploadPath.resolve(fileName);
-		            Files.copy(imageFile.getInputStream(), filePath);
+
+		            // 上書き保存
+		            Files.copy(imageFile.getInputStream(), filePath, StandardCopyOption.REPLACE_EXISTING);
 
 		            // データベースに保存するパス
 		            imagePath = "/uploadImages/" + fileName;
@@ -178,8 +187,8 @@ public class MovieController {
 		            return "redirect:/movie/form";
 		        }
 		    }
-			
-			//entityに変換
+
+		    // entityに変換
 			Movie movie = MovieHelper.convertMovie(form, imagePath);
 			//更新実行
 			service.updateMovie(movie);
