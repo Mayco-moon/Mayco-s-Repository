@@ -4,19 +4,32 @@
 
 <hr>
 
-## スクリーンショット
-
-PCデバイス　ログイン後の一覧画面：
-
 ![アプリのスクリーンショット_pc](https://github.com/Mayco-moon/movie_review_app/blob/0473dc5cf60a0ae5b7e0d276be0d6ffd97b03bb5/image%20/ss_list_pc.jpg)
-
-スマートフォンデバイス　ログイン後の一覧画面（レスポンシブ）：
-
-![アプリのスクリーンショット_sp](https://github.com/Mayco-moon/movie_review_app/blob/0473dc5cf60a0ae5b7e0d276be0d6ffd97b03bb5/image%20/ss_list_sp.jpg)
-
-※各ビューのスクリーンショット画像を同階層内 `image` フォルダに配置しています。ぜひご覧ください！
  
 <hr>
+
+## 各レビューのスクリーンショット
+<details><summary>ログイン画面：</summary>
+   
+![スクリーンショット_pc]([https://github.com/user-attachments/assets/d6889f83-f224-488f-92b0-2a6cc72033bd](https://github.com/Mayco-moon/movie_review_app/blob/0473dc5cf60a0ae5b7e0d276be0d6ffd97b03bb5/image%20/ss_login_pc.jpg))
+
+![スクリーンショット_sp]([https://github.com/user-attachments/assets/20824328-84c8-4097-94ab-d83b61293ba9](https://github.com/Mayco-moon/movie_review_app/blob/0473dc5cf60a0ae5b7e0d276be0d6ffd97b03bb5/image%20/ss_login_sp.jpg))
+
+</details>
+<details><summary>データ一覧画面：</summary>
+   
+![スクリーンショット_pc]([https://github.com/user-attachments/assets/d6889f83-f224-488f-92b0-2a6cc72033bd](https://github.com/Mayco-moon/movie_review_app/blob/0473dc5cf60a0ae5b7e0d276be0d6ffd97b03bb5/image%20/ss_list_pc.jpg))
+
+![スクリーンショット_sp]([https://github.com/user-attachments/assets/20824328-84c8-4097-94ab-d83b61293ba9](https://github.com/Mayco-moon/movie_review_app/blob/0473dc5cf60a0ae5b7e0d276be0d6ffd97b03bb5/image%20/ss_list_sp.jpg))
+ 
+</details>
+<details><summary>データ編集画面：</summary>
+
+![スクリーンショット_pc]([https://github.com/user-attachments/assets/d6889f83-f224-488f-92b0-2a6cc72033bd](https://github.com/Mayco-moon/movie_review_app/blob/0473dc5cf60a0ae5b7e0d276be0d6ffd97b03bb5/image%20/ss_list_pc.jpg))
+
+![スクリーンショット_sp]([https://github.com/user-attachments/assets/20824328-84c8-4097-94ab-d83b61293ba9](https://github.com/Mayco-moon/movie_review_app/blob/0473dc5cf60a0ae5b7e0d276be0d6ffd97b03bb5/image%20/ss_list_sp.jpg))
+ 
+</details>
 
 ## 制作の経緯
 
