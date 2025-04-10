@@ -1,4 +1,4 @@
-# アプリ名「マイレビューアプリ」
+# アプリ名「My Movie Review」
 作成：２０２５年４月<br>
 制作期間：約２週間
 
@@ -8,11 +8,11 @@
 
 PCデバイス　ログイン後の一覧画面：
 
-![アプリのスクリーンショット_pc](image/ss_list_pc.jpg)
+![アプリのスクリーンショット_pc](https://github.com/Mayco-moon/movie_review_app/blob/0473dc5cf60a0ae5b7e0d276be0d6ffd97b03bb5/image%20/ss_list_pc.jpg)
 
 スマートフォンデバイス　ログイン後の一覧画面（レスポンシブ）：
 
-![アプリのスクリーンショット_sp](image/ss_list_sp.jpg)
+![アプリのスクリーンショット_sp](https://github.com/Mayco-moon/movie_review_app/blob/0473dc5cf60a0ae5b7e0d276be0d6ffd97b03bb5/image%20/ss_list_sp.jpg)
 
 ※各ビューのスクリーンショット画像を同階層内 `image` フォルダに配置しています。ぜひご覧ください！
  
