@@ -452,6 +452,7 @@ section form .loginBtn input {
 		background-position: left top;
 		background-repeat: no-repeat;
 		background-attachment: fixed;
+		background-size: cover;
 	}
 	body{
 		background:#fff;
