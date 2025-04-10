@@ -31,6 +31,15 @@ JavaやSpring Boot、PostgreSQLといった技術を実践的に使いながら�
 
 <hr>
 
+## レスポンシブデザイン
+
+想定する閲覧者のデバイス傾向を考慮し、レスポンシブデザイン対応させています。
+スマホでの操作感をより快適に、見やすくするためのUI設計を心掛けました。
+
+![一覧ページスクリーンショット_pc](https://github.com/Mayco-moon/movie_review_app/blob/0473dc5cf60a0ae5b7e0d276be0d6ffd97b03bb5/image%20/readme_list.jpg)
+
+<hr>
+
 ## 今後追加したい機能
 
 - ソート機能の充実（ジャンル別、公開年を絞るなど）
