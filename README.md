@@ -8,12 +8,14 @@
 
 PCデバイス　起動後のトップ画面：
 
-<img src="ss_pc_readme.jpg" alt="アプリのスクリーンショット_pc" style="width:55%;">
+<img src="ss_pc_readme.jpg" alt="アプリのスクリーンショット_pc">　
+
 
 
 スマートフォンデバイス　起動後のトップ画面（レスポンシブ）：
+　
 
-<img src="ss_sp_readme.jpg" alt="アプリのスクリーンショット_sp" style="width:20%">
+<img src="ss_sp_readme.jpg" alt="アプリのスクリーンショット_sp" style="width:35%">
 
 <hr>
 
