@@ -4,8 +4,8 @@
 
 起動後のトップ画面：
 
-![アプリのスクリーンショット_pc](images/ss_pc_readme.jpg)
-![アプリのスクリーンショット_sp](images/ss_sp_readme.jpg)
+![アプリのスクリーンショット_pc](ss_pc_readme.jpg)
+![アプリのスクリーンショット_sp](ss_sp_readme.jpg)
 
 ## 制作の経緯
 
