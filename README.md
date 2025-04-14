@@ -4,7 +4,7 @@
 
 <hr>
 
-![メイン画像](https://github.com/Mayco-moon/movie_review_app/blob/0473dc5cf60a0ae5b7e0d276be0d6ffd97b03bb5/image/ss_list_pc.jpg)
+![メイン画像](https://github.com/Mayco-moon/movie_review_app/blob/661ea7cc093a0b3ac0cfcfb3fe5364c17ad48342/image/main.jpg)
  
 <hr>
 
@@ -36,15 +36,13 @@ JavaやSpring Boot、PostgreSQLといった技術を実践的に使いながら�
 想定する閲覧者のデバイス傾向を考慮し、レスポンシブデザイン対応させています。
 スマホでの操作感をより快適に、見やすくするためのUI設計を心掛けました。
 
-![一覧ページスクリーンショット](https://github.com/Mayco-moon/movie_review_app/blob/9e4cec63a82b6eb2ac2b67eb4fb3cedc35bbc3d6/image/readme_list.jpg)
+![一覧ページスクリーンショット](https://github.com/Mayco-moon/movie_review_app/blob/661ea7cc093a0b3ac0cfcfb3fe5364c17ad48342/image/readme_list.jpg)
 
-__________________
 
 ![詳細ページスクリーンショット](https://github.com/Mayco-moon/movie_review_app/blob/9e4cec63a82b6eb2ac2b67eb4fb3cedc35bbc3d6/image/readme_detail.jpg)
 
-__________________
 
-![ログインページスクリーンショット](https://github.com/Mayco-moon/movie_review_app/blob/9e4cec63a82b6eb2ac2b67eb4fb3cedc35bbc3d6/image/readme_login.jpg)
+![ログインページスクリーンショット](https://github.com/Mayco-moon/movie_review_app/blob/661ea7cc093a0b3ac0cfcfb3fe5364c17ad48342/image/readme_login.jpg)
 
 <hr>
 
